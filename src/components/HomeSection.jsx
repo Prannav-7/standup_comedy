@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import audienceImg from '../images/audience.jpeg';
-import micPersonImg from '../images/mic-person.jpeg';
-import peopleImg from '../images/people.jpeg';
-import stageImg from '../images/stage.jpeg';
-import micImg from '../images/mic.jpeg';
+import audienceImg from '../images/people.jpeg';
+import micPersonImg from '../images/person.jpeg';
+import peopleImg from '../images/people1.jpeg';
+import stageImg from '../images/Stand-up Comedy.jpg';
+import micImg from '../images/intromic.webp';
 
 export default function HomeSection() {
     const containerRef = useRef(null);
@@ -61,7 +61,7 @@ export default function HomeSection() {
                     </div>
 
                     <h2 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter relative z-10">
-                        THIS IS <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff0055] to-[#00eaff]">PUNCHLINE</span>
+                        THIS IS <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff0055] to-[#00eaff]">LAUGH RIOT</span>
                     </h2>
                     <p className="text-xl md:text-2xl text-zinc-400 font-mono max-w-3xl mx-auto relative z-10">
                         The underground comedy collective where boundaries don't exist and laughter is mandatory

@@ -47,10 +47,10 @@ export default function Footer() {
                         {/* Brand section */}
                         <div className="flex-1">
                             <h2 className="text-6xl md:text-8xl lg:text-9xl leading-none font-black tracking-tighter uppercase mb-6">
-                                <span className="text-white">Punch</span>
+                                <span className="text-white">Laugh</span>
                                 <br />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff0055] via-purple-500 to-[#00eaff]">
-                                    Line
+                                    Riot
                                 </span>
                             </h2>
                             <p className="text-lg md:text-xl text-zinc-400 font-light max-w-md leading-relaxed mb-8">
@@ -104,18 +104,18 @@ export default function Footer() {
                                     Get in Touch
                                 </h3>
                                 <a
-                                    href="mailto:hello@punchline.com"
+                                    href="mailto:hello@laughriot.com"
                                     className="text-lg font-mono text-white/80 hover:text-[#ff0055] transition-colors duration-300 group flex items-center gap-2"
                                 >
                                     <span className="w-1 h-1 rounded-full bg-[#ff0055] opacity-0 group-hover:opacity-100 transition-opacity" />
-                                    📧 hello@punchline.com
+                                    📧 hello@laughriot.com
                                 </a>
                                 <a
-                                    href="mailto:booking@punchline.com"
+                                    href="mailto:booking@laughriot.com"
                                     className="text-lg font-mono text-white/80 hover:text-[#ff0055] transition-colors duration-300 group flex items-center gap-2"
                                 >
                                     <span className="w-1 h-1 rounded-full bg-[#ff0055] opacity-0 group-hover:opacity-100 transition-opacity" />
-                                    📩 booking@punchline.com
+                                    📩 booking@laughriot.com
                                 </a>
                                 <a
                                     href="#"
@@ -133,7 +133,7 @@ export default function Footer() {
 
                     {/* Bottom bar */}
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4 font-mono text-sm text-zinc-500">
-                        <span>© 2025 Punchline Comedy Collective</span>
+                        <span>© 2025 Laugh Riot Comedy Collective</span>
                         <div className="flex items-center gap-6">
                             <a href="#" className="hover:text-white transition-colors">
                                 Privacy
