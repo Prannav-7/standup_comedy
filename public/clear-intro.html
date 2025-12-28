@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clear Intro - Dualite</title>
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      font-family: system-ui;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .container {
+      text-align: center;
+      max-width: 500px;
+      padding: 2rem;
+    }
+    button {
+      background: linear-gradient(90deg, #ff0055, #00eaff);
+      border: none;
+      color: white;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 1rem;
+    }
+    button:hover {
+      transform: scale(1.05);
+    }
+    .success {
+      color: #00eaff;
+      margin-top: 1rem;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎬 Reset Intro Animation</h1>
+    <p>Click the button below to clear the intro flag and see the animation again.</p>
+    
+    <button onclick="clearIntro()">Clear Intro & Reload</button>
+    
+    <div class="success" id="success">
+      ✅ Intro cleared! Redirecting...
+    </div>
+    
+    <hr style="margin: 2rem 0; border-color: #333;">
+    
+    <h3>Manual Instructions:</h3>
+    <ol style="text-align: left;">
+      <li>Open browser DevTools (F12)</li>
+      <li>Go to Console tab</li>
+      <li>Type: <code style="background: #222; padding: 0.2rem 0.5rem; border-radius: 4px;">sessionStorage.clear()</code></li>
+      <li>Press Enter</li>
+      <li>Refresh the page (F5)</li>
+    </ol>
+  </div>
+
+  <script>
+    function clearIntro() {
+      sessionStorage.clear();
+      document.getElementById('success').style.display = 'block';
+      setTimeout(() => {
+        window.location.href = '/';
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
