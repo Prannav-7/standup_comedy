@@ -4,6 +4,7 @@ import audienceImg from '../images/audience.jpeg';
 import micPersonImg from '../images/mic-person.jpeg';
 import peopleImg from '../images/people.jpeg';
 import stageImg from '../images/stage.jpeg';
+import micImg from '../images/mic.jpeg';
 
 export default function HomeSection() {
     const containerRef = useRef(null);
@@ -41,18 +42,28 @@ export default function HomeSection() {
             />
 
             <div className="container mx-auto px-4 relative z-10">
-                {/* Header */}
+                {/* Header with Microphone Background */}
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="text-center mb-20"
+                    className="text-center mb-20 relative"
                 >
-                    <h2 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter">
+                    {/* Large Microphone Background Image */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[800px] md:h-[800px] opacity-10 pointer-events-none">
+                        <img
+                            src={micImg}
+                            alt="Microphone"
+                            className="w-full h-full object-contain"
+                            style={{ filter: 'grayscale(100%) contrast(1.5)' }}
+                        />
+                    </div>
+
+                    <h2 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter relative z-10">
                         THIS IS <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff0055] to-[#00eaff]">PUNCHLINE</span>
                     </h2>
-                    <p className="text-xl md:text-2xl text-zinc-400 font-mono max-w-3xl mx-auto">
+                    <p className="text-xl md:text-2xl text-zinc-400 font-mono max-w-3xl mx-auto relative z-10">
                         The underground comedy collective where boundaries don't exist and laughter is mandatory
                     </p>
                 </motion.div>
