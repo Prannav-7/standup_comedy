@@ -2,18 +2,60 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Flip } from 'gsap/Flip';
+import { motion } from 'framer-motion';
 
 // Import images
-import micPersonImg from '../images/WhatsApp Image 2025-12-26 at 10.02.04 AM.jpeg';
+import micPersonImg from '../images/Mike Epps_ Don\'t Take it Personal.jpg';
 import personImg from '../images/person.jpeg';
 import person1Img from '../images/Sketch Paris theatre Humour Humoriste.jpg';
-import audienceImg from '../images/people.jpeg';
-import peopleImg from '../images/people.jpeg';
+import audienceImg from '../images/Laugh at a Comedy Show.jpg';
+import peopleImg from '../images/Home - The Stand Comedy Club.jpg';
 import people1Img from '../images/people1.jpeg';
 import stageImg from '../images/Stand-up Comedy.jpg';
 import micImg from '../images/intromic.webp';
 
 gsap.registerPlugin(ScrollTrigger, Flip);
+
+// Animation variants for staggered text reveal
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.2,
+            delayChildren: 0.1
+        }
+    }
+};
+
+const textVariants = {
+    hidden: {
+        opacity: 0,
+        y: 50,
+        filter: 'blur(15px)'
+    },
+    visible: {
+        opacity: 1,
+        y: 0,
+        filter: 'blur(0px)',
+        transition: {
+            duration: 1,
+            ease: [0.25, 0.46, 0.45, 0.94]
+        }
+    }
+};
+
+const separatorVariants = {
+    hidden: { scaleX: 0, opacity: 0 },
+    visible: {
+        scaleX: 1,
+        opacity: 1,
+        transition: {
+            duration: 1.2,
+            ease: [0.25, 0.46, 0.45, 0.94]
+        }
+    }
+};
 
 export default function CardGallery() {
     const galleryRef = useRef(null);
@@ -101,50 +143,82 @@ export default function CardGallery() {
                 </div>
             </div>
 
-            <section className="content-section">
-                <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+            {/* Content Section with Scroll Animations - Hidden until scrolled */}
+            <motion.section
+                className="content-section"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.6, margin: "-100px" }}
+                variants={containerVariants}
+            >
+                <motion.h2
+                    className="text-4xl md:text-5xl font-black text-white mb-6"
+                    variants={textVariants}
+                >
                     LAUGH RIOT <span className="text-[#00eaff]">GALLERY</span>
-                </h2>
-                <p className="text-lg text-zinc-300 mb-4">
+                </motion.h2>
+                <motion.p
+                    className="text-lg text-zinc-300 mb-4"
+                    variants={textVariants}
+                >
                     Experience the energy, the talent, and the unforgettable moments that make Laugh Riot
                     the ultimate comedy destination. From intimate open mic nights to sold-out shows,
                     every performance is a celebration of laughter and creativity.
-                </p>
-                <p className="text-lg text-zinc-300 mb-4">
+                </motion.p>
+                <motion.p
+                    className="text-lg text-zinc-300 mb-4"
+                    variants={textVariants}
+                >
                     Our stage has hosted some of the most talented comedians in the industry, each bringing
                     their unique voice and perspective. Whether you're here for observational humor,
                     improv comedy, or bold social commentary, you'll find it all at Laugh Riot.
-                </p>
-                <p className="text-lg text-zinc-300 mb-4">
+                </motion.p>
+                <motion.p
+                    className="text-lg text-zinc-300 mb-4"
+                    variants={textVariants}
+                >
                     Join us for an evening where strangers become friends, where laughter breaks down barriers,
-                    and where every joke lands perfectly. This isn't just a comedy club—it's a movement.
-                </p>
-                <p className="text-lg text-zinc-300 mb-4">
-                    Our community is built on the foundation of authentic humor and genuine connection.
-                    We believe comedy has the power to unite people, challenge perspectives, and create
-                    lasting memories that go far beyond the punchline.
-                </p>
-                <p className="text-lg text-zinc-300 mb-4">
-                    From our state-of-the-art sound system to our intimate seating arrangements, every detail
-                    is designed to enhance your experience. We've created a space where comedians can thrive
-                    and audiences can fully immerse themselves in the art of stand-up.
-                </p>
-                <p className="text-lg text-zinc-300 mb-4">
-                    Whether you're a comedy veteran or experiencing live stand-up for the first time,
-                    Laugh Riot welcomes you with open arms. Our diverse lineup ensures there's something
-                    for everyone, from clean family-friendly shows to late-night adult comedy.
-                </p>
-                <p className="text-lg text-zinc-300 mb-4">
-                    The spotlight is waiting. The microphone is ready. The audience is eager.
-                    All that's missing is you. Come be part of the laughter, the energy, and the magic
-                    that happens when comedy comes alive.
-                </p>
-                <p className="text-lg text-zinc-300">
+                    and where every joke lands perfectly. Our community is built on the foundation of
+                    authentic humor and genuine connection that goes far beyond the punchline.
+                </motion.p>
+                <motion.p
+                    className="text-lg text-zinc-300"
+                    variants={textVariants}
+                >
                     Laugh Riot isn't just about watching comedy—it's about experiencing it, living it,
                     and becoming part of a community that celebrates the power of laughter.
                     Join us and discover why we're more than just a comedy club. We're a revolution.
-                </p>
-            </section>
+                </motion.p>
+            </motion.section>
+
+            {/* Animated Section Separator - Hidden until scrolled */}
+            <motion.div
+                className="section-separator"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.8, margin: "-50px" }}
+            >
+                <motion.div
+                    className="separator-line"
+                    variants={separatorVariants}
+                />
+                <motion.div
+                    className="separator-glow"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, delay: 0.5 }}
+                />
+                <motion.span
+                    className="separator-text"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.8 }}
+                >
+                    ✦ CONNECT WITH US ✦
+                </motion.span>
+            </motion.div>
         </>
     );
 }

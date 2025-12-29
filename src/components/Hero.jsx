@@ -1,10 +1,27 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import StageScene from './3d/StageScene';
+import LightRays from './LightRays';
 
 export default function Hero() {
   return (
     <div className="relative h-screen w-full overflow-hidden bg-zinc-950">
+      {/* Light Rays Background Effect */}
+      <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}>
+        <LightRays
+          raysOrigin="top-center"
+          raysColor="#00ffff"
+          raysSpeed={1.5}
+          lightSpread={0.8}
+          rayLength={1.2}
+          followMouse={true}
+          mouseInfluence={0.1}
+          noiseAmount={0.1}
+          distortion={0.05}
+          className="hero-light-rays"
+        />
+      </div>
+
       <StageScene />
 
       <div className="relative z-10 h-full flex flex-col items-center justify-center pointer-events-none">

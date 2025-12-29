@@ -254,7 +254,7 @@ body {
 }
 
 .content-section {
-  padding: 4rem 5rem;
+  padding: 2rem 3rem;
   max-width: 1200px;
   margin: 0 auto;
   background: linear-gradient(135deg, #18181b 0%, #09090b 100%);
@@ -264,6 +264,61 @@ body {
   font-size: 1.2rem;
   margin-bottom: 1rem;
   line-height: 1.8;
+}
+
+/* Section Separator Styles */
+.section-separator {
+  position: relative;
+  width: 100%;
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #09090b 0%, #0a0a0f 50%, #09090b 100%);
+  overflow: hidden;
+}
+
+.separator-line {
+  width: 60%;
+  max-width: 600px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00eaff, #ff0055, #00eaff, transparent);
+  border-radius: 2px;
+  transform-origin: center;
+}
+
+.separator-glow {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(0, 234, 255, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+.separator-text {
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  color: #71717a;
+  text-transform: uppercase;
 }
 
 /* Responsive Design */
@@ -326,7 +381,7 @@ body {
   }
 
   .content-section {
-    padding: 3rem 2rem;
+    padding: 1.5rem 1.5rem;
   }
 }
 
