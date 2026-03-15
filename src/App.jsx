@@ -18,12 +18,12 @@ function App() {
 
   useEffect(() => {
     if (stage === 'intro') {
-      // Transition to main content after 5 seconds
+      // Transition to main content after 2.5 seconds
       const mainTimer = setTimeout(() => {
         console.log('✅ GridScan intro completed, showing main content');
         sessionStorage.setItem('introShown', 'true');
         setStage('main');
-      }, 5000);
+      }, 2500);
 
       return () => {
         clearTimeout(mainTimer);
